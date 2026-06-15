@@ -40,6 +40,8 @@ anything unchanged, so you never burn tokens regenerating the whole course to fi
 ## Quickstart
 
 ```bash
+python3 -m venv venv
+source venv/bin/activate                     # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 export ANTHROPIC_API_KEY=sk-ant-...          # or cp .env.example .env and load it
 git init && git add -A && git commit -m "scaffold"
