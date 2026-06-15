@@ -1,0 +1,43 @@
+# Per-unit spec. LOCAL dependency: changing this rebuilds only this unit's outline.
+# The filename stem (01-pathfinding) is the unit id used throughout the pipeline.
+
+title: "Pathfinding and State-Space Search"
+week: 1
+time_budget_minutes:
+  lecture: 90
+  lab: 120
+
+prerequisites:
+  - "Graphs, priority queues, big-O analysis"
+
+# Unit-level outcomes. Reference module outcomes by id where they apply.
+outcomes:
+  - "Model a game world as a search graph (tile grid, waypoint graph, navmesh). [lo1]"
+  - "Implement and contrast BFS, Dijkstra and A*. [lo1]"
+  - "Design admissible heuristics and reason about optimality. [lo2]"
+  - "Identify when hierarchical or any-angle methods are warranted. [lo2]"
+
+concepts:
+  - "Search-graph representations: tile grids, waypoint graphs, navigation meshes"
+  - "Uninformed search: BFS, DFS, uniform-cost (Dijkstra)"
+  - "Informed search: greedy best-first, A*"
+  - "Heuristics: admissibility, consistency; Manhattan / Euclidean / octile"
+  - "Practical concerns: tie-breaking, path smoothing, dynamic obstacles"
+  - "Beyond A*: HPA*, Jump Point Search (signpost only, not examined)"
+
+references: ["millington", "aima", "hart1968", "amit-redblob"]
+
+worked_examples:
+  - "Trace A* on an 8x8 grid with the octile heuristic, showing open/closed sets."
+  - "Compare node expansions: Dijkstra vs A* on the same map."
+
+lab:
+  brief: >
+    Implement A* over a tile grid in the supplied starter (C++ or Python) with a
+    pluggable heuristic, and instrument node-expansion counts. Compare against the
+    provided Dijkstra baseline on three supplied maps.
+  deliverable: "Working A*, a short results table, and a paragraph justifying the heuristic choice."
+
+ml_bridge: >
+  Forward-reference only: where learned heuristics / neural guidance fit, and why
+  classical A* remains the production default. Full treatment in the later ML unit.

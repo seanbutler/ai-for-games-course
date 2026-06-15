@@ -1,0 +1,29 @@
+# Approved references = ground truth for citation. The generator is instructed to
+# cite ONLY from here and to flag (never invent) anything it would need beyond it.
+#
+# >>> CURATE THIS. These entries are seeds; verify edition/year/page details and
+#     add your own canonical sources before relying on generated citations. <<<
+
+- id: millington
+  citation: "Millington, I. & Funge, J. (2009). Artificial Intelligence for Games (2nd ed.). Morgan Kaufmann."
+  covers: "The canonical practitioner text: pathfinding, decision making (FSM, BT), steering."
+
+- id: aima
+  citation: "Russell, S. & Norvig, P. (2021). Artificial Intelligence: A Modern Approach (4th ed.). Pearson."
+  covers: "Formal treatment of search, heuristics, and optimality proofs."
+
+- id: hart1968
+  citation: "Hart, P. E., Nilsson, N. J. & Raphael, B. (1968). A Formal Basis for the Heuristic Determination of Minimum Cost Paths. IEEE Transactions on Systems Science and Cybernetics, 4(2), 100-107."
+  covers: "Original A* paper; admissibility and optimality of the heuristic search."
+
+- id: amit-redblob
+  citation: "Patel, A. Introduction to A* (Red Blob Games). redblobgames.com."
+  covers: "Interactive, implementation-focused explanation of grids and A*."
+
+- id: buckland
+  citation: "Buckland, M. (2005). Programming Game AI by Example. Wordware Publishing."
+  covers: "FSMs, steering, and goal-driven agents with C++ code."
+
+- id: champandard-bt
+  citation: "Champandard, A. J. Behavior Trees for Next-Gen Game AI (AiGameDev)."
+  covers: "Practitioner framing of behaviour trees and their authoring benefits over FSMs."

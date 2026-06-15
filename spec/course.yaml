@@ -1,0 +1,40 @@
+# Course-level spec. This is a GLOBAL dependency: changing it triggers a
+# rebuild of every unit. Keep stable things here, unit-specific things in spec/units/.
+
+title: "AI for Games"
+code: "WM-XXX"            # replace with the real Warwick module code
+level: "MSc (Games Engineering)"
+institution: "University of Warwick"
+credits: 15
+contact_hours: 30
+
+philosophy: >
+  Classical-first. Students build a working intuition for traditional,
+  hand-authored game AI (search, decision making, steering) before layering
+  on machine-learning approaches. Every technique is grounded in something
+  buildable, and classical and ML methods are compared on the same problem.
+
+audience: >
+  MSc students with strong programming ability (C++ and/or Python),
+  data-structures fundamentals, and some real-time/games exposure.
+  No prior AI coursework assumed.
+
+# Module-level learning outcomes. Unit specs reference these.
+outcomes:
+  lo1: "Select and implement appropriate classical AI techniques for given game scenarios."
+  lo2: "Analyse the performance and authoring trade-offs of competing approaches."
+  lo3: "Critically compare classical and ML-based methods for the same problem."
+
+assessment:
+  - id: cw1
+    title: "Pathfinding & decision-making agent (coursework)"
+    weight: 60
+    maps_to_units: ["01-pathfinding", "02-decision-making"]
+  - id: exam
+    title: "Written examination"
+    weight: 40
+
+# Peer courses used to calibrate scope and rigour.
+benchmarks:
+  - "Georgia Tech CS 7632 (Game AI)"
+  - "Falmouth MSc game AI provision"

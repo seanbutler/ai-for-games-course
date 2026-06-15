@@ -1,0 +1,40 @@
+title: "Decision Making: Finite State Machines and Behaviour Trees"
+week: 2
+time_budget_minutes:
+  lecture: 90
+  lab: 120
+
+prerequisites:
+  - "Unit 01 (agents acting in a world)"
+  - "Basic OOP / composition"
+
+outcomes:
+  - "Model agent behaviour as a finite state machine and identify its limits. [lo1]"
+  - "Implement a behaviour tree with composite, decorator and leaf nodes. [lo1]"
+  - "Compare FSMs and behaviour trees on authorability and scaling. [lo2]"
+  - "Contrast hand-authored decision making with learned policies. [lo3]"
+
+concepts:
+  - "FSMs: states, transitions, the state-explosion problem"
+  - "Hierarchical FSMs as a partial remedy"
+  - "Behaviour trees: tick semantics, success/failure/running"
+  - "Node types: sequence, selector, parallel; decorators; conditions; actions"
+  - "Blackboards for shared state"
+  - "Authoring and debugging trade-offs at scale"
+
+references: ["millington", "buckland", "champandard-bt"]
+
+worked_examples:
+  - "An FSM for a guard (patrol/chase/search/return) and where it becomes unwieldy."
+  - "The same guard as a behaviour tree, showing the authoring win."
+
+lab:
+  brief: >
+    Extend the Unit 01 agent with a behaviour tree (supplied node interfaces) so it
+    patrols, pursues on sight, and gives up after losing the target. Use a blackboard
+    for perception state.
+  deliverable: "A working BT-driven agent and a short reflection comparing it to an FSM equivalent."
+
+ml_bridge: >
+  Forward-reference only: utility AI and learned policies (RL) as alternatives, and
+  why authored trees still dominate shipped titles. Full treatment in the later ML unit.

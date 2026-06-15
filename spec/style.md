@@ -1,0 +1,33 @@
+# House style — a global dependency fed into every generation.
+# This is where durable voice/format decisions live. When reviewer feedback
+# turns out to be a *standing* rule, promote it here rather than leaving it in
+# a per-unit feedback file.
+
+audience_and_level: |
+  Write for capable MSc students. Assume strong programming and data-structures
+  fundamentals; do not assume prior AI coursework. Explain the *why* (trade-offs,
+  failure modes) not just the *how*.
+
+voice: |
+  British English. Direct and precise. Practitioner-grounded: tie every technique
+  to a concrete game scenario. Avoid hype and filler.
+
+framing: |
+  Classical-first. Present the traditional/hand-authored technique fully on its own
+  terms before mentioning ML alternatives. Where an ML method exists for the same
+  problem, add a short forward-reference rather than a full treatment.
+
+code: |
+  Code examples in C or C++, matching what the unit spec asks for. Prefer short,
+  complete, runnable snippets over pseudocode. Comment the non-obvious lines.
+
+citations: |
+  Cite ONLY from the approved reference list (spec/refs.yaml), using the full
+  citation string. NEVER invent a source, author, year, or page number. If a point
+  genuinely needs a source that is not on the list, do not fabricate one — flag it
+  as a gap for the author to supply.
+
+structure: |
+  Lectures: clear segment headings that match the frozen outline. Worked examples
+  set off and worked through in full. Labs: numbered tasks, explicit deliverable,
+  marking rubric aligned to the assessment in course.yaml.
