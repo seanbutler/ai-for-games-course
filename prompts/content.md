@@ -16,6 +16,15 @@ strings.
 A complete lab sheet: objectives, prerequisites, numbered step-by-step tasks, the
 deliverable, and a marking rubric aligned to the assessment in the course spec.
 
+The assessment is a C++ implementation project submitted with a 4,000-word technical
+report. Foundation units (01–03) are mandatory; students must also include at least one
+advanced-learning technique (Units 04–06) and at least one advanced-generative technique
+(Units 07–08). Every lab should leave students with working C++ code they can extend
+directly in their project submission. Lab tasks for foundation units build the mandatory
+core; lab tasks for advanced units produce a self-contained component the student can
+plug into their project. The marking rubric must map each task to the specific LO(s) and
+project requirement(s) it evidences.
+
 <<<FILE: claims-to-verify.md>>>
 A bulleted list of every factual or technical assertion in lecture.md that the
 author should independently verify before teaching (figures, dates, complexity
