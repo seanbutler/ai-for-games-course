@@ -75,3 +75,9 @@
 - id: nvidia-dlss
   citation: "Liu, J. & Takehara, J. (2020). DLSS 2.0: Deep Learning Super Sampling. NVIDIA Developer Blog."
   covers: "DLSS architecture; temporal anti-aliasing enhanced with neural upscaling."
+
+# --- Navigation and tooling ---
+
+- id: recast-detour
+  citation: "Monkkonen, M. Recast Navigation (open source). github.com/recastnavigation/recastnavigation."
+  covers: "Industry-standard NavMesh generation (Recast) and pathfinding runtime (Detour); tile-based incremental baking."

@@ -1,0 +1,50 @@
+# Per-unit spec. LOCAL dependency: changing this rebuilds only this unit.
+
+title: "AI Tooling and Pipelines"
+week: 5
+time_budget_minutes:
+  lecture: 60
+  tutorial: 60
+
+prerequisites:
+  - "Units 01–03 (introduction, pathfinding, decision making)"
+
+outcomes:
+  - "Describe the asset pipeline for navigation data and explain how NavMesh generation parameters affect agent behaviour. [lo1, lo3]"
+  - "Evaluate visual authoring tools for behaviour trees and finite state machines and assess their trade-offs for team workflows. [lo2, lo3]"
+  - "Implement a blackboard system and explain how it decouples sensing, reasoning, and action in a production AI architecture. [lo3]"
+  - "Apply AI debugging and visualisation techniques to identify and fix incorrect agent behaviour. [lo3]"
+
+concepts:
+  - "Navigation mesh pipelines: Recast/Detour offline baking, tile-based incremental updates, off-mesh links, dynamic obstacle avoidance (RVO/ORCA); NavMesh in Unreal and Unity"
+  - "Steering pipelines: combining steering behaviours with weighted blending and priority arbitration; integration with animation systems"
+  - "Visual BT and FSM editors: Unreal Behaviour Tree editor, Unity Animator and state machine authoring; node-graph tools for non-programmers"
+  - "Blackboard architecture: shared agent knowledge store; typed keys; reader/writer separation; blackboard vs direct sensing"
+  - "Perception pipelines: sight cone and hearing range queries; sensory events and filtering; connecting world state to agent decisions"
+  - "Data-driven AI configuration: externalising parameters to data files (JSON, YAML, DataTables); hot-reload workflows; designer-friendly tuning without recompilation"
+  - "AI debugging and visualisation: in-game debug overlays (path corridors, perception radii, active BT nodes, current FSM state); logging and replay tools"
+  - "AI testing and validation: scripted scenario tests, automated regression for behaviour correctness; stress-testing under high agent counts"
+  - "Asset pipeline integration: waypoint graphs, influence map textures, and annotation layers as build artefacts; source-control and iteration workflows"
+
+references: ["millington", "buckland", "champandard-bt", "recast-detour"]
+
+worked_examples:
+  - "Walk through the Unreal Engine NavMesh bake pipeline: which parameters to adjust for a platformer vs an open-world RPG, and how runtime tile updates are triggered when geometry changes."
+  - "Refactor a monolithic NPC update function into a blackboard + perception pipeline + behaviour tree: show what moves where and why the resulting architecture is easier to debug and extend."
+
+tutorial:
+  brief: >
+    Tooling and debug exercise. Students are given a broken NPC (incorrect patrol,
+    stuck pathfinding, wrong state transitions) and must use in-engine debug overlays
+    and logging to diagnose each fault, then fix it. A second part asks them to
+    externalise at least three agent parameters to a data file and demonstrate
+    hot-reload.
+  deliverable: >
+    Fixed NPC source code with the three parameters externalised to a data file,
+    plus a brief written fault log (approx. 150 words) naming each bug, its root
+    cause as revealed by the debug tooling, and the fix applied.
+
+ml_bridge: >
+  The data-driven configuration and debugging habits established here apply directly
+  to ML agent pipelines: hyperparameter externalisation, training observability, and
+  behaviour visualisation are the same problems at a different layer of the stack.

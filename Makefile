@@ -5,13 +5,14 @@ PY := python3 scripts/generate.py
 UNITFLAG := $(if $(UNIT),--unit $(UNIT),)
 FORCEFLAG := $(if $(FORCE),--force,)
 
-.PHONY: help outline content build freeze unfreeze clean
+.PHONY: help outline content build brief freeze unfreeze clean
 
 help:
 > @echo "make outline  [UNIT=01-pathfinding] [FORCE=1]   generate / refresh structural outlines"
 > @echo "make freeze   UNIT=01-pathfinding                approve an outline so content can be generated"
 > @echo "make content  [UNIT=01-pathfinding] [FORCE=1]    generate lecture/lab/claims from FROZEN outlines"
 > @echo "make build    [UNIT=...] [FORCE=1]               outline + content in one go"
+> @echo "make brief    [FORCE=1]                          render student-facing assessment brief"
 > @echo "make unfreeze UNIT=01-pathfinding                re-open an outline for editing"
 > @echo "make clean                                       drop the input-hash cache (keeps build/)"
 
@@ -23,6 +24,9 @@ content:
 
 build:
 > $(PY) --stage all $(UNITFLAG) $(FORCEFLAG)
+
+brief:
+> $(PY) --stage brief $(FORCEFLAG)
 
 freeze:
 > @test -n "$(UNIT)" || { echo "UNIT=<id> required, e.g. make freeze UNIT=01-pathfinding"; exit 1; }

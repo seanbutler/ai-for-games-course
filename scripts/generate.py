@@ -46,8 +46,8 @@ CACHE = ROOT / ".build-cache"
 # Model is pinned for reproducibility. Bump to "claude-opus-4-8" for final prose
 # if you want maximum quality on the content stage. See docs.claude.com for ids.
 MODEL = "claude-sonnet-4-6"
-TEMPERATURE = {"outline": 0.2, "content": 0.5}   # low temp = stable structure
-MAX_TOKENS = {"outline": 4000, "content": 8000}
+TEMPERATURE = {"outline": 0.2, "content": 0.5, "brief": 0.3}
+MAX_TOKENS = {"outline": 4000, "content": 8000, "brief": 4000}
 
 FILE_MARKER = re.compile(r"^<<<FILE:\s*(.+?)\s*>>>\s*$", re.MULTILINE)
 FRONTMATTER = re.compile(r"\A---\n.*?\n---\n\n?", re.DOTALL)
@@ -232,13 +232,46 @@ def build_content(unit: str, force: bool):
     write_cache(unit, "content", h)
 
 
+# --- Brief stage ------------------------------------------------------------
+def build_brief(force: bool):
+    c = common_inputs()
+    brief_spec = read(SPEC / "assessment-brief.yaml")
+    parts = [c["course"], c["style"], brief_spec, read(PROMPTS / "brief.md")]
+    h = input_hash("brief", parts)
+
+    out = BUILD / "assessment-brief.md"
+    if not force and out.exists() and cached_hash("_brief", "brief") == h:
+        print("  [skip] assessment brief (unchanged)")
+        return
+
+    user = (
+        f"# Course spec\n{c['course']}\n\n"
+        f"# House style\n{c['style']}\n\n"
+        f"# Assessment spec\n{brief_spec}\n\n"
+        f"Produce the student-facing assessment brief now."
+    )
+    print("  [gen ] assessment brief ...")
+    body = call_claude(read(PROMPTS / "brief.md"), user, "brief")
+
+    BUILD.mkdir(exist_ok=True)
+    out.write_text(provenance("brief", h) + body, encoding="utf-8")
+    write_cache("_brief", "brief", h)
+    print(f"         wrote {out.relative_to(ROOT)}")
+
+
 # --- Entry point ------------------------------------------------------------
 def main():
     ap = argparse.ArgumentParser(description="Staged course content generator.")
-    ap.add_argument("--stage", choices=["outline", "content", "all"], default="all")
+    ap.add_argument("--stage", choices=["outline", "content", "all", "brief"], default="all")
     ap.add_argument("--unit", help="unit id (filename stem). Default: all units.")
     ap.add_argument("--force", action="store_true", help="regenerate even if inputs unchanged")
     args = ap.parse_args()
+
+    if args.stage == "brief":
+        print("Assessment brief:")
+        build_brief(args.force)
+        print("Done.")
+        return
 
     units = [args.unit] if args.unit else unit_ids()
     if not units:

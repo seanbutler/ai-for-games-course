@@ -41,8 +41,8 @@ outcomes:
     relevant to games or interactive systems.
   lo6: >
     Critically assess the role and impact of modern AI technologies in game development,
-    including applications such as agent behaviour, content generation, rendering
-    enhancement, and large language model integration.
+    such as agent behaviour, content generation, rendering enhancement, and large
+    language model integration.
 
 # Unit categories referenced by the assessment requirements below.
 unit_categories:
@@ -58,6 +58,12 @@ unit_categories:
     description: >
       Generative and modern AI techniques; students must implement at least one.
     units: ["07-ai-content-systems", "08-modern-ai-applications"]
+  applied_context:
+    description: >
+      Applied units covering large-scale agent architectures and the authoring/debugging
+      toolchain for classical game AI. Students are expected to draw on these when
+      justifying performance and design decisions in their project report.
+    units: ["09-ai-at-scale", "10-ai-tooling-pipeline"]
 
 assessment:
   - id: project
@@ -103,6 +109,8 @@ assessment:
       - "06-ai-agents-learning"
       - "07-ai-content-systems"
       - "08-modern-ai-applications"
+      - "09-ai-at-scale"
+      - "10-ai-tooling-pipeline"
     maps_to_outcomes: [lo1, lo2, lo3, lo4, lo5, lo6]
     outcome_evidence:
       lo1: "Report section analysing the classical AI components; code demonstrating pathfinding, decision systems, and behaviour modelling."
