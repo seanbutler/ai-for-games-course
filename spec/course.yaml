@@ -1,40 +1,67 @@
-# Course-level spec. This is a GLOBAL dependency: changing it triggers a
-# rebuild of every unit. Keep stable things here, unit-specific things in spec/units/.
+# Course-level spec. GLOBAL dependency: changing this triggers a rebuild of every unit.
 
-title: "AI for Games"
-code: "WM-XXX"            # replace with the real Warwick module code
-level: "MSc (Games Engineering)"
+title: "AI and Games"
+code: "WM9SL-15"
+level: "MSc Games Engineering"
 institution: "University of Warwick"
+department: "WMG"
 credits: 15
-contact_hours: 30
+contact_hours: 30          # 15 lectures + 15 tutorials
+duration_weeks: 4
 
 philosophy: >
-  Classical-first. Students build a working intuition for traditional,
-  hand-authored game AI (search, decision making, steering) before layering
-  on machine-learning approaches. Every technique is grounded in something
-  buildable, and classical and ML methods are compared on the same problem.
+  Classical-first. Students build a working intuition for traditional, hand-authored
+  game AI (search, decision making, behaviour modelling) before layering on modern
+  machine-learning approaches. Every technique is grounded in something buildable,
+  and classical and ML methods are compared on the same problem wherever possible.
 
 audience: >
-  MSc students with strong programming ability (C++ and/or Python),
-  data-structures fundamentals, and some real-time/games exposure.
-  No prior AI coursework assumed.
+  MSc students on the Games Engineering programme. Strong programming ability
+  (C++ and/or Python and/or Unreal/Unity), data-structures fundamentals, and
+  some real-time/games exposure assumed. No prior AI or ML coursework assumed.
 
-# Module-level learning outcomes. Unit specs reference these.
+# Module-level learning outcomes — taken directly from WM9SL-15 specification.
 outcomes:
-  lo1: "Select and implement appropriate classical AI techniques for given game scenarios."
-  lo2: "Analyse the performance and authoring trade-offs of competing approaches."
-  lo3: "Critically compare classical and ML-based methods for the same problem."
+  lo1: >
+    Critically analyse the principles and techniques used in traditional game artificial
+    intelligence, including pathfinding, decision systems, and behaviour modelling.
+  lo2: >
+    Evaluate and compare different AI approaches used in games, including rule-based
+    systems and machine learning methods, and justify their suitability for specific
+    design or technical problems.
+  lo3: >
+    Design and implement classical game AI algorithms within an interactive environment,
+    such as pathfinding or behaviour systems for game agents.
+  lo4: >
+    Demonstrate a conceptual understanding of modern machine learning techniques,
+    including neural networks, convolutional networks, recurrent networks, and
+    transformer architectures.
+  lo5: >
+    Develop and apply neural network-based solutions to solve practical problems
+    relevant to games or interactive systems.
+  lo6: >
+    Critically assess the role and impact of modern AI technologies in game development,
+    including applications such as agent behaviour, content generation, rendering
+    enhancement, and large language model integration.
 
 assessment:
-  - id: cw1
-    title: "Pathfinding & decision-making agent (coursework)"
-    weight: 60
-    maps_to_units: ["01-pathfinding", "02-decision-making"]
-  - id: exam
-    title: "Written examination"
-    weight: 40
+  - id: project
+    title: "Game AI Implementation Project"
+    type: "Individual project"
+    length: "4000 words"
+    weight: 100
+    maps_to_units:
+      - "01-introduction"
+      - "02-pathfinding"
+      - "03-decision-making"
+      - "04-ml-foundations"
+      - "05-neural-networks"
+      - "06-ai-agents-learning"
+      - "07-ai-content-systems"
+      - "08-modern-ai-applications"
+    description: "Implementation of AI into a game environment."
+    maps_to_outcomes: [lo1, lo2, lo3, lo4, lo5, lo6]
 
-# Peer courses used to calibrate scope and rigour.
 benchmarks:
   - "Georgia Tech CS 7632 (Game AI)"
   - "Falmouth MSc game AI provision"

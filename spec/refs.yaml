@@ -1,24 +1,14 @@
-# Approved references = ground truth for citation. The generator is instructed to
-# cite ONLY from here and to flag (never invent) anything it would need beyond it.
+# Approved references — ground truth for citation. The generator cites ONLY from here
+# and flags (never invents) anything it would need beyond this list.
 #
 # >>> CURATE THIS. These entries are seeds; verify edition/year/page details and
-#     add your own canonical sources before relying on generated citations. <<<
+#     add canonical sources before relying on generated citations. <<<
+
+# --- Classical game AI ---
 
 - id: millington
   citation: "Millington, I. & Funge, J. (2009). Artificial Intelligence for Games (2nd ed.). Morgan Kaufmann."
-  covers: "The canonical practitioner text: pathfinding, decision making (FSM, BT), steering."
-
-- id: aima
-  citation: "Russell, S. & Norvig, P. (2021). Artificial Intelligence: A Modern Approach (4th ed.). Pearson."
-  covers: "Formal treatment of search, heuristics, and optimality proofs."
-
-- id: hart1968
-  citation: "Hart, P. E., Nilsson, N. J. & Raphael, B. (1968). A Formal Basis for the Heuristic Determination of Minimum Cost Paths. IEEE Transactions on Systems Science and Cybernetics, 4(2), 100-107."
-  covers: "Original A* paper; admissibility and optimality of the heuristic search."
-
-- id: amit-redblob
-  citation: "Patel, A. Introduction to A* (Red Blob Games). redblobgames.com."
-  covers: "Interactive, implementation-focused explanation of grids and A*."
+  covers: "Canonical practitioner text: pathfinding, decision making (FSM, BT), steering, tactical AI."
 
 - id: buckland
   citation: "Buckland, M. (2005). Programming Game AI by Example. Wordware Publishing."
@@ -27,3 +17,61 @@
 - id: champandard-bt
   citation: "Champandard, A. J. Behavior Trees for Next-Gen Game AI (AiGameDev)."
   covers: "Practitioner framing of behaviour trees and their authoring benefits over FSMs."
+
+# --- Search and pathfinding ---
+
+- id: hart1968
+  citation: "Hart, P. E., Nilsson, N. J. & Raphael, B. (1968). A Formal Basis for the Heuristic Determination of Minimum Cost Paths. IEEE Transactions on Systems Science and Cybernetics, 4(2), 100–107."
+  covers: "Original A* paper; admissibility and optimality of heuristic search."
+
+- id: aima
+  citation: "Russell, S. & Norvig, P. (2021). Artificial Intelligence: A Modern Approach (4th ed.). Pearson."
+  covers: "Formal treatment of search, heuristics, optimality proofs, and ML foundations."
+
+- id: amit-redblob
+  citation: "Patel, A. Introduction to A* (Red Blob Games). redblobgames.com."
+  covers: "Interactive, implementation-focused explanation of grids and A*."
+
+# --- Machine learning foundations ---
+
+- id: goodfellow
+  citation: "Goodfellow, I., Bengio, Y. & Courville, A. (2016). Deep Learning. MIT Press."
+  covers: "Foundations: MLPs, backpropagation, CNNs, RNNs, regularisation, optimisation."
+
+- id: sutton-barto
+  citation: "Sutton, R. S. & Barto, A. G. (2018). Reinforcement Learning: An Introduction (2nd ed.). MIT Press."
+  covers: "MDPs, Q-learning, policy gradient, actor-critic, deep RL."
+
+- id: lecun1998
+  citation: "LeCun, Y., Bottou, L., Bengio, Y. & Haffner, P. (1998). Gradient-based learning applied to document recognition. Proceedings of the IEEE, 86(11), 2278–2324."
+  covers: "Seminal CNN paper; convolutional layers and pooling."
+
+- id: vaswani2017
+  citation: "Vaswani, A. et al. (2017). Attention Is All You Need. Advances in Neural Information Processing Systems, 30."
+  covers: "Transformer architecture; self-attention mechanism."
+
+# --- Reinforcement learning in games ---
+
+- id: mnih2015
+  citation: "Mnih, V. et al. (2015). Human-level control through deep reinforcement learning. Nature, 518, 529–533."
+  covers: "Deep Q-Network (DQN); Atari benchmark; experience replay and target networks."
+
+- id: silver2016
+  citation: "Silver, D. et al. (2016). Mastering the game of Go with deep neural networks and tree search. Nature, 529, 484–489."
+  covers: "AlphaGo: combining MCTS with deep RL for games with complex strategy."
+
+# --- Procedural content and generative AI ---
+
+- id: shaker-pcg
+  citation: "Shaker, N., Togelius, J. & Nelson, M. J. (2016). Procedural Content Generation in Games. Springer."
+  covers: "Taxonomy of PCG methods: grammar-based, search-based, ML-based generation."
+
+- id: liu2021
+  citation: "Liu, R. et al. (2021). Deep Learning for Procedural Content Generation. Neural Computing and Applications, 33, 19–37."
+  covers: "Survey of DL approaches to PCG: level, texture, narrative, and sound generation."
+
+# --- Rendering and modern applications ---
+
+- id: nvidia-dlss
+  citation: "Liu, J. & Takehara, J. (2020). DLSS 2.0: Deep Learning Super Sampling. NVIDIA Developer Blog."
+  covers: "DLSS architecture; temporal anti-aliasing enhanced with neural upscaling."
