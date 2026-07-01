@@ -1,0 +1,55 @@
+
+title: "Collision Detection, Response, and Spatial Perception"
+week: 2
+time_budget_minutes:
+  lecture: 120
+  tutorial: 120
+
+prerequisites:
+  - "Unit 01 (module framing and environment setup)"
+  - "Unit 02 (search graphs and navigable space)"
+  - "Basic linear algebra: vectors, dot product, cross product"
+
+outcomes:
+  - "Implement and compare narrow-phase collision detection algorithms for common primitive types. [lo1, lo3]"
+  - "Resolve collisions with physically plausible response using impulse and separation methods. [lo1, lo3]"
+  - "Use ray and shape casts to implement AI perception queries (line-of-sight, range checks, sensor cones). [lo1, lo3]"
+  - "Select and apply spatial acceleration structures to keep collision and query costs sub-linear at game scale. [lo2]"
+
+concepts:
+  - "Collision geometry primitives: AABB, OBB, sphere, capsule — trade-offs for AI agents vs physics bodies"
+  - "Broad-phase vs narrow-phase: why the two-phase split is necessary at game scale"
+  - "Broad-phase structures: sweep-and-prune, uniform grids, bounding-volume hierarchies (BVH)"
+  - "Narrow-phase algorithms: AABB overlap test, sphere-sphere, sphere-AABB, separating axis theorem (SAT) for OBBs"
+  - "Collision response: overlap separation (position correction), impulse-based velocity response, restitution and friction coefficients"
+  - "Ray casting: parametric ray definition, ray–AABB, ray–sphere, ray–triangle intersection"
+  - "Shape casts (swept volumes): capsule cast for agent movement validation, sphere sweep for projectiles"
+  - "AI perception with spatial queries: line-of-sight via ray cast, range detection via sphere query, field-of-view via cone test"
+  - "Spatial indexing for queries: uniform grid cells, k-d trees, BVH traversal — when each is appropriate"
+  - "Practical optimisations: early-out tests, layer/channel masking, query budgeting per frame"
+
+references: ["millington", "aima"]
+
+worked_examples:
+  - "Implement a 2-D AABB vs AABB overlap test and minimum-translation-vector (MTV) response; show how the same code drives both physics separation and agent avoidance."
+  - "Trace a ray through a uniform grid to determine line-of-sight between two agents, stepping cell-by-cell and early-outing on the first occupied cell."
+  - "Build a simple field-of-view sensor: combine a range sphere query (broad) with a dot-product angle check and a ray-cast occlusion test (narrow), returning a list of visible targets."
+
+tutorial:
+  brief: >
+    Extend the A* starter from Unit 02 with a spatial perception layer. Students
+    implement: (1) an AABB collision system for static obstacles using a uniform
+    grid broad phase; (2) a ray-cast line-of-sight query; (3) a field-of-view
+    sensor cone that returns visible agents. The sensor output is logged but not
+    yet consumed by a decision system — that integration comes in Unit 04.
+  deliverable: >
+    Working C++ implementation of the three systems above; a results table showing
+    query counts and timings with and without the broad-phase grid; a written
+    paragraph explaining which optimisation had the largest impact and why.
+
+ml_bridge: >
+  Forward-reference: learned collision proxies (neural signed-distance fields,
+  differentiable collision for RL training) and data-driven perception filters
+  exist in research but hand-authored geometric sensors remain standard in shipped
+  titles for their determinism and debuggability. The perception layer built here
+  will be directly consumed by the decision systems in Unit 04.

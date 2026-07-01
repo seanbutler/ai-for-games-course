@@ -1,0 +1,45 @@
+
+title: "Search and Pathfinding"
+week: 1
+time_budget_minutes:
+  lecture: 120
+  tutorial: 120
+
+prerequisites:
+  - "Unit 01 (module framing and environment setup)"
+  - "Graphs, priority queues, big-O analysis"
+
+outcomes:
+  - "Model a game world as a search graph (tile grid, waypoint graph, navmesh). [lo1, lo3]"
+  - "Implement and contrast BFS, Dijkstra, and A*. [lo1, lo3]"
+  - "Design admissible heuristics and reason about optimality. [lo1]"
+  - "Evaluate when hierarchical or any-angle extensions are warranted. [lo2]"
+
+concepts:
+  - "Search-graph representations: tile grids, waypoint graphs, navigation meshes"
+  - "Uninformed search: BFS, DFS, uniform-cost search (Dijkstra)"
+  - "Informed search: greedy best-first, A*"
+  - "Heuristics: admissibility, consistency; Manhattan, Euclidean, and octile distance"
+  - "Practical concerns: tie-breaking, path smoothing, dynamic obstacles, partial replanning"
+  - "Extensions (signpost only): Hierarchical Pathfinding A* (HPA*), Jump Point Search, Theta*"
+
+references: ["millington", "aima", "hart1968", "amit-redblob"]
+
+worked_examples:
+  - "Trace A* step-by-step on an 8×8 grid with a simple (Manhattan) distance heuristic, showing open and closed sets at each iteration."
+  - "Compare node-expansion counts for Dijkstra vs A* on the same map, demonstrating the heuristic's pruning effect."
+
+tutorial:
+  brief: >
+    Implement A* over a tile grid using the supplied starter project (C++ or Python).
+    The implementation must support a pluggable heuristic interface and instrument
+    node-expansion counts. Run against three supplied maps of increasing complexity
+    and compare results to the provided Dijkstra baseline.
+  deliverable: >
+    Working A* implementation, a results table (map × algorithm × expansions × path cost),
+    and a written paragraph justifying the heuristic choice for each map.
+
+ml_bridge: >
+  Forward-reference: learned heuristics and neural path-planning (e.g., neural A* guidance)
+  exist but classical A* with a well-chosen heuristic remains the production default in
+  shipped titles due to determinism and debuggability. Full treatment in Unit 06.

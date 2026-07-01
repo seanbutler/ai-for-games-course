@@ -1,0 +1,47 @@
+
+title: "Modern AI Applications in Games"
+week: 4
+time_budget_minutes:
+  lecture: 120
+  tutorial: 120
+
+prerequisites:
+  - "Units 04–07 (full ML arc)"
+
+outcomes:
+  - "Explain neural super-resolution and denoising and their impact on rendering pipelines. [lo4, lo6]"
+  - "Critically assess LLM integration in games: capabilities, limitations, and player-experience implications. [lo6]"
+  - "Evaluate ethical and practical considerations when deploying modern AI in game products. [lo6]"
+  - "Synthesise learning from across the module to justify AI technique choices for the project. [lo2, lo6]"
+
+concepts:
+  - "Neural rendering: super-resolution (DLSS, FSR), real-time denoising, neural radiance fields overview"
+  - "Physics approximation: neural surrogates for cloth, fluid, and destruction simulation"
+  - "LLMs in games: NPC dialogue, dynamic quest generation, procedural narrative; latency and cost constraints"
+  - "AI-assisted development tools: code generation, asset creation, QA and playtesting"
+  - "Ethics and risk: bias in training data, player manipulation, dependency on third-party models, environmental cost"
+  - "The classical-vs-ML synthesis: a decision framework for choosing techniques"
+  - "Assessment consolidation: mapping the project brief to module learning outcomes"
+
+references: ["nvidia-dlss", "vaswani2017", "shaker-pcg", "millington"]
+
+worked_examples:
+  - "Compare a traditional TAA pipeline with DLSS 2.0: where the neural network sits, what it replaces, and the quality/performance trade-off."
+  - "Design a decision tree for selecting between a hand-authored behaviour tree and an LLM-backed NPC, given constraints of latency, budget, and authorial control."
+
+tutorial:
+  brief: >
+    Open-ended critical analysis exercise. Students select one modern AI application
+    from games (DLSS, an LLM-backed NPC system, a generative asset tool, or a RL
+    game agent) and produce a structured critical evaluation: how it works, what
+    classical technique (if any) it replaces or augments, its limitations, and its
+    player-experience impact. Peer discussion in groups of three.
+  deliverable: >
+    A structured written evaluation (approx. 400 words) and participation in a
+    five-minute group discussion. This forms the seeds of the reflective section
+    of the final project report.
+
+ml_bridge: >
+  This unit is the culmination of the ML arc. Students leave with a principled
+  framework for comparing classical and ML methods and a clear brief for the
+  final implementation project.

@@ -1,0 +1,48 @@
+
+title: "AI Agents and Learning in Games"
+week: 3
+time_budget_minutes:
+  lecture: 120
+  tutorial: 120
+
+prerequisites:
+  - "Unit 03 (decision making; agent-environment interaction)"
+  - "Unit 05 (neural network architectures)"
+
+outcomes:
+  - "Formalise a game scenario as a Markov Decision Process. [lo4, lo5]"
+  - "Explain Q-learning and the Deep Q-Network algorithm. [lo4, lo5]"
+  - "Describe policy gradient methods and contrast them with value-based approaches. [lo4]"
+  - "Compare RL agents with classical decision systems on the same game problem. [lo2]"
+  - "Critically evaluate the practical limits of RL in shipped game titles. [lo2, lo6]"
+
+concepts:
+  - "Markov Decision Processes: states, actions, rewards, transition function, discount factor"
+  - "Value functions: V(s) and Q(s,a); Bellman equations"
+  - "Q-learning: tabular update rule, convergence conditions"
+  - "Deep Q-Network (DQN): experience replay, target network, frame stacking"
+  - "Policy gradient: REINFORCE; actor-critic overview"
+  - "Self-play and multi-agent learning; curriculum learning"
+  - "Case studies: AlphaGo / AlphaZero (MCTS + RL), OpenAI Five (Dota 2), game-playing benchmarks"
+  - "Practical limits: sample inefficiency, reward shaping, non-stationarity, designer control"
+
+references: ["sutton-barto", "mnih2015", "silver2016", "millington"]
+
+worked_examples:
+  - "Trace Q-learning updates on a tiny 4-state grid world, showing Q-table convergence over episodes."
+  - "Explain the DQN replay buffer: why random sampling breaks temporal correlation and stabilises training."
+
+tutorial:
+  brief: >
+    Train a DQN agent on a supplied minimal 2D game environment (grid world or simple
+    arcade clone) using a provided PyTorch training loop scaffold. Tune one hyperparameter
+    (replay buffer size or target-network update frequency) and compare learning curves.
+  deliverable: >
+    Trained agent, learning-curve plots for both hyperparameter settings, and a written
+    comparison (approx. 300 words) between the RL agent's emergent behaviour and an
+    equivalent hand-authored FSM from Unit 03.
+
+ml_bridge: >
+  This unit completes the classical-vs-ML comparison arc begun in Unit 03. Students
+  can now make an evidence-based judgement about when RL adds value over authored
+  systems and what the engineering cost is.

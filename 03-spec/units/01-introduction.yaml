@@ -1,0 +1,40 @@
+
+title: "Introduction to Artificial Intelligence in Games"
+week: 1
+time_budget_minutes:
+  lecture: 60
+  tutorial: 60
+
+prerequisites:
+  - "Basic programming in C++ or Python"
+  - "Data structures fundamentals (lists, trees, graphs)"
+
+outcomes:
+  - "Describe the historical role of AI in shaping game design and player experience. [lo1]"
+  - "Distinguish between classical/hand-authored AI and modern ML-based approaches. [lo2]"
+  - "Identify which module topics map to which game-development problems. [lo6]"
+
+concepts:
+  - "What game AI is and is not: bounded rationality, believability over optimality"
+  - "Historical milestones: Pac-Man ghosts, Halo combat AI, STRIPS planners, AlphaGo, generative AI"
+  - "Taxonomy of techniques: search, decision making, learning, generative"
+  - "The two-theme structure of the module: classical foundations vs modern ML"
+  - "Assessment brief walkthrough: what the project requires and how to approach it"
+  - "Development environment and tooling setup"
+
+references: ["millington", "aima"]
+
+worked_examples:
+  - "Dissect the Pac-Man ghost AI: four simple rules that produce emergent challenge — no ML needed."
+  - "Contrast the Pac-Man ghosts with a modern AI NPC driven by a large language model: what is gained and what is lost?"
+
+tutorial:
+  brief: >
+    Environment setup and orientation exercise. Students install the module starter
+    (Python or C++) and run a pre-built A* demo, then explore the code to identify
+    where game state, agent logic, and rendering are separated.
+  deliverable: "Running starter environment; a brief written identification of the three layers in the demo codebase."
+
+ml_bridge: >
+  Frame the module arc: classical techniques taught first on their own terms, ML
+  alternatives introduced later for the same problems so students can compare directly.

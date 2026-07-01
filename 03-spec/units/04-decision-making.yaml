@@ -1,0 +1,47 @@
+
+title: "Decision Making Systems for Game Agents"
+week: 2
+time_budget_minutes:
+  lecture: 120
+  tutorial: 120
+
+prerequisites:
+  - "Unit 02 (agents acting in a world, graph-based state)"
+  - "Basic OOP / composition patterns"
+
+outcomes:
+  - "Model agent behaviour as a finite state machine and articulate its limitations. [lo1, lo3]"
+  - "Implement a behaviour tree with composite, decorator, and leaf nodes. [lo1, lo3]"
+  - "Compare FSMs, behaviour trees, and utility AI on authoring cost and scalability. [lo2]"
+  - "Contrast hand-authored decision making with learned policies. [lo2]"
+
+concepts:
+  - "Finite state machines: states, transitions, the state-explosion problem"
+  - "Hierarchical FSMs (HSMs) as a partial remedy"
+  - "Behaviour trees: tick semantics, success / failure / running status"
+  - "BT node types: sequence, selector, parallel; decorators; condition and action leaves"
+  - "Blackboards for shared perception and world state"
+  - "Utility AI: scoring candidate actions, continuous trade-off vs discrete transitions"
+  - "Authoring, debugging, and scaling trade-offs across approaches"
+
+references: ["millington", "buckland", "champandard-bt"]
+
+worked_examples:
+  - "Design an FSM for a guard (patrol → alert → chase → search → return) and trace the transition explosion when adding a second objective."
+  - "Refactor the same guard as a behaviour tree; show how the sequence/selector hierarchy replaces hand-coded transitions."
+
+tutorial:
+  brief: >
+    Extend the Unit 02 agent with a behaviour tree using the supplied node interfaces.
+    The agent must patrol waypoints, pursue a player on detection, and give up after
+    losing line-of-sight for a configurable timeout. Use a blackboard for all
+    perception state rather than hard-coded fields.
+  deliverable: >
+    Working BT-driven agent and a short written reflection (approx. 300 words) comparing
+    the BT implementation to an equivalent FSM, addressing authoring effort, state
+    explosion, and debuggability.
+
+ml_bridge: >
+  Forward-reference: utility AI blurs into learned value functions; reinforcement learning
+  replaces hand-crafted scoring with a policy learned from reward. Authored trees still
+  dominate shipped titles for designer control and predictability. Full treatment in Unit 06.

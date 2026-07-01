@@ -1,0 +1,48 @@
+
+title: "Foundations of Machine Learning"
+week: 2
+time_budget_minutes:
+  lecture: 120
+  tutorial: 120
+
+prerequisites:
+  - "Unit 03 (decision making as a reference point for comparison)"
+  - "Linear algebra basics: vectors, matrix multiplication"
+  - "Calculus basics: derivatives, chain rule (intuition sufficient)"
+
+outcomes:
+  - "Describe the supervised, unsupervised, and reinforcement learning paradigms and their game-relevant use cases. [lo4]"
+  - "Explain gradient descent and backpropagation at a conceptual level. [lo4]"
+  - "Identify appropriate ML problem framings for given game-development tasks. [lo2, lo4]"
+  - "Articulate bias-variance trade-off and common failure modes (overfitting, underfitting). [lo4]"
+
+concepts:
+  - "ML paradigms: supervised, unsupervised, reinforcement learning — definitions and distinctions"
+  - "The learning loop: data, model, loss function, optimisation"
+  - "Gradient descent: batch, stochastic, mini-batch; learning rate intuition"
+  - "Backpropagation: chain rule applied to computation graphs (conceptual, not full derivation)"
+  - "Overfitting and underfitting: bias-variance trade-off, regularisation overview"
+  - "Train / validation / test splits; why held-out evaluation matters"
+  - "Where ML fits in games: what problems are best left to classical methods and why"
+
+references: ["goodfellow", "aima"]
+
+worked_examples:
+  - "Frame predicting an enemy's next move as a supervised classification problem: features, labels, loss function, and evaluation metric."
+  - "Walk through one gradient descent step on a toy loss surface, showing how the learning rate affects convergence."
+
+tutorial:
+  brief: >
+    Using a supplied dataset of recorded player trajectories, train a simple logistic
+    regression model (scikit-learn or equivalent) to predict whether a player will turn
+    left or right at a junction. Evaluate on a held-out set and report accuracy and a
+    confusion matrix. Experiment with two regularisation strengths.
+  deliverable: >
+    Working training script, a short results table (regularisation strength × accuracy),
+    and a written paragraph explaining what the confusion matrix reveals about the model's
+    failure mode.
+
+ml_bridge: >
+  This unit establishes the vocabulary and mental model for Units 05–08. Every
+  ML technique in the rest of the module is an instance of the learning loop
+  introduced here.
