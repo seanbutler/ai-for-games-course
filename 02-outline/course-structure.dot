@@ -1,0 +1,284 @@
+digraph course {
+    rankdir=LR
+
+
+    // ── Aligner Scale ──────────────────────────────────────────────────────────
+
+    node [fontname="Helvetica" fontsize=11 width = 4
+            shape=plaintext fontcolor="black" fillcolor="white"]
+    edge [color="#555555"]
+
+    level1 [label="Module"]
+    level2 [label="Unit"]
+    level3 [label="Lecture Segment"]
+    level4 [label="Learning Outcomes"]
+
+    level1 -> level2 [style=invis]
+    level2 -> level3 [style=invis]
+    level3-> level4 [style=invis]  
+
+    // ── Module root ──────────────────────────────────────────────────────────
+ 
+    node [style=filled]
+
+
+    module [
+        label="WM9SL-15\nAI and Games"
+        shape=box fontsize=14 fontname="Helvetica-Bold"
+        fillcolor="#1a1a2e" fontcolor="white"
+    ]
+    // { rank = same; module; level1;}
+
+
+    // ── Unit nodes ───────────────────────────────────────────────────────────
+    node [shape=ellipse style=filled fontsize=11 width = 4]
+    edge [style=dashed color="#2d7a4a" ]
+
+
+    u01 [label="Unit 01 / Introduction to AI in Games\n(60 min)" fillcolor="#2d4a7a" fontcolor="white"]
+    u02 [label="Unit 02 / Search and Pathfinding\n(120 min)" fillcolor="#2d4a7a" fontcolor="white"]
+    u03 [label="Unit 03 / Perception: Sensing the World\n(60 min)" fillcolor="#2d4a7a" fontcolor="white"]
+    u04 [label="Unit 04 / Decision Making Systems\n(120 min)" fillcolor="#2d4a7a" fontcolor="white"]
+    u05 [label="Unit 05 / Foundations of Machine Learning\n(120 min)" fillcolor="#4a2d7a" fontcolor="white"]
+    u06 [label="Unit 06 / Neural Network Architectures\n(120 min)" fillcolor="#4a2d7a" fontcolor="white"]
+    u07 [label="Unit 07 / AI Agents and Learning\n(120 min)" fillcolor="#4a2d7a" fontcolor="white"]
+    u08 [label="Unit 08 / AI for Game Content and Systems\n(120 min)" fillcolor="#4a2d7a" fontcolor="white"]
+    u09 [label="Unit 09 / Modern AI Applications\n(120 min)" fillcolor="#4a2d7a" fontcolor="white"]
+
+
+    module -> u01
+    module -> u02
+    module -> u03
+    module -> u04
+    module -> u05
+    module -> u06
+    module -> u07
+    module -> u08
+    module -> u09
+
+    // { rank = same; u01; u02; u03; u04; u05; u06; u07; u08; u09; level2;}
+
+
+
+
+    node [shape=box width = 3.5]
+
+    // ── Unit 01 segments ─────────────────────────────────────────────────────
+    node [fillcolor="#d0e4f7" fontcolor="#1a1a2e"]
+
+    u01s1 [label="What Game AI Is - (and Is Not) - 15 min"]
+    u01s2 [label="Historical Milestones - 20 min"]
+    u01s3 [label="Taxonomy and Module Arc - 15 min"]
+    u01s4 [label="Environment Setup - 10 min"]
+    u01lab [label="Lab - 60 min" fillcolor="#a8c8e8" fontname="Helvetica-Oblique"]
+
+    u01 -> u01s1
+    u01 -> u01s2
+    u01 -> u01s3
+    u01 -> u01s4
+    u01 -> u01lab
+
+    // ── Unit 02 segments ─────────────────────────────────────────────────────
+    u02s1 [label="Search Graph - Representations - 20 min"]
+    u02s2 [label="Uninformed Search - 20 min"]
+    u02s3 [label="Informed Search - and A* - 30 min"]
+    u02s4 [label="Practical Concerns - 20 min"]
+    u02s5 [label="NavMesh in Practice - 10 min"]
+    u02ml [label="ML Bridge - 20 min" fillcolor="#c8d8f0" fontname="Helvetica-Oblique"]
+    u02lab [label="Lab - 120 min" fillcolor="#a8c8e8" fontname="Helvetica-Oblique"]
+
+    u02 -> u02s1
+    u02 -> u02s2
+    u02 -> u02s3
+    u02 -> u02s4
+    u02 -> u02s5
+    u02 -> u02ml
+    u02 -> u02lab
+
+    // ── Unit 03 segments ─────────────────────────────────────────────────────
+    u03s1 [label="Why Perception is - a Separate Problem - 10 min"]
+    u03s2 [label="Collision Geometry - and Overlap Tests - 15 min"]
+    u03s3 [label="Raycasting for - Line-of-Sight - 20 min"]
+    u03s4 [label="FoV Sensors and - Practical Optimisation - 15 min"]
+    u03lab [label="Lab - 60 min" fillcolor="#a8c8e8" fontname="Helvetica-Oblique"]
+
+    u03 -> u03s1
+    u03 -> u03s2
+    u03 -> u03s3
+    u03 -> u03s4
+    u03 -> u03lab
+
+    // ── Unit 04 segments ─────────────────────────────────────────────────────
+    u04s1 [label="Finite State Machines - 20 min"]
+    u04s2 [label="Hierarchical FSMs - 15 min"]
+    u04s3 [label="Behaviour Trees - 35 min"]
+    u04s4 [label="Utility AI - 20 min"]
+    u04s5 [label="Planning: STRIPS - and GOAP - 20 min"]
+    u04s6 [label="Comparison and - Selection Guide - 15 min"]
+    u04ml [label="ML Bridge - 25 min" fillcolor="#c8d8f0" fontname="Helvetica-Oblique"]
+    u04lab [label="Lab - 120 min" fillcolor="#a8c8e8" fontname="Helvetica-Oblique"]
+
+    u04 -> u04s1
+    u04 -> u04s2
+    u04 -> u04s3
+    u04 -> u04s4
+    u04 -> u04s5
+    u04 -> u04s6
+    u04 -> u04ml
+    u04 -> u04lab
+
+    // ── Unit 05 segments ─────────────────────────────────────────────────────
+    node [fillcolor="#e8d0f7" fontcolor="#1a1a2e"]
+
+    u05s1 [label="Why ML in Games? - 15 min"]
+    u05s2 [label="Learning Paradigms - 20 min"]
+    u05s3 [label="The Learning Loop - 25 min"]
+    u05s4 [label="Backpropagation - 20 min"]
+    u05s5 [label="Overfitting and - Generalisation - 20 min"]
+    u05s6 [label="Where ML Fits in - the Module Arc - 20 min"]
+    u05lab [label="Lab - 120 min" fillcolor="#d0b0f0" fontname="Helvetica-Oblique"]
+
+    u05 -> u05s1
+    u05 -> u05s2
+    u05 -> u05s3
+    u05 -> u05s4
+    u05 -> u05s5
+    u05 -> u05s6
+    u05 -> u05lab
+
+    // ── Unit 06 segments ─────────────────────────────────────────────────────
+    u06s1 [label="Multilayer Perceptrons - 20 min"]
+    u06s2 [label="Convolutional Neural - Networks - 30 min"]
+    u06s3 [label="Recurrent Networks - and LSTMs - 25 min"]
+    u06s4 [label="Transformers - and Attention - 25 min"]
+    u06s5 [label="Practical Training - Techniques - 20 min"]
+    u06lab [label="Lab - 120 min" fillcolor="#d0b0f0" fontname="Helvetica-Oblique"]
+
+    u06 -> u06s1
+    u06 -> u06s2
+    u06 -> u06s3
+    u06 -> u06s4
+    u06 -> u06s5
+    u06 -> u06lab
+
+    // ── Unit 07 segments ─────────────────────────────────────────────────────
+    u07s1 [label="The RL Framework - 20 min"]
+    u07s2 [label="Tabular RL: - Q-Learning - 25 min"]
+    u07s3 [label="Deep Q-Networks - (DQN) - 25 min"]
+    u07s4 [label="Policy Gradient - and Actor-Critic - 20 min"]
+    u07s5 [label="Imitation Learning - 15 min"]
+    u07s6 [label="Classical vs RL - Comparison - 15 min"]
+    u07lab [label="Lab - 120 min" fillcolor="#d0b0f0" fontname="Helvetica-Oblique"]
+
+    u07 -> u07s1
+    u07 -> u07s2
+    u07 -> u07s3
+    u07 -> u07s4
+    u07 -> u07s5
+    u07 -> u07s6
+    u07 -> u07lab
+
+    // ── Unit 08 segments ─────────────────────────────────────────────────────
+    u08s1 [label="Why Procedural Content Generation? - 15 min"]
+    u08s2 [label="Grammar and Rule-Based Generation - 20 min"]
+    u08s3 [label="Search-Based PCG - 20 min"]
+    u08s4 [label="Neural Generative Models - 35 min"]
+    u08s5 [label="Evaluation of Generated Content - 10 min"]
+    u08ml [label="ML Bridge / Forward Reference - 20 min" fillcolor="#c8b0e8" fontname="Helvetica-Oblique"]
+    u08lab [label="Lab - 120 min" fillcolor="#d0b0f0" fontname="Helvetica-Oblique"]
+
+    u08 -> u08s1
+    u08 -> u08s2
+    u08 -> u08s3
+    u08 -> u08s4
+    u08 -> u08s5
+    u08 -> u08ml
+    u08 -> u08lab
+
+    // ── Unit 09 segments ─────────────────────────────────────────────────────
+    u09s1 [label="Neural Rendering Enhancement - 25 min"]
+    u09s2 [label="Physics Approximation with ML - 20 min"]
+    u09s3 [label="Large Language Models in Games - 35 min"]
+    u09s4 [label="AI-Assisted Game Development - 20 min"]
+    u09s5 [label="Module Synthesis and Assessment Guidance - 20 min"]
+    u09lab [label="Lab - 120 min" fillcolor="#d0b0f0" fontname="Helvetica-Oblique"]
+
+    u09 -> u09s1
+    u09 -> u09s2
+    u09 -> u09s3
+    u09 -> u09s4
+    u09 -> u09s5
+    u09 -> u09lab
+
+// {
+// rank=same; level3; u01s1; u01s2; u01s3; u01s4; u01lab; u02s1; u02s2; u02s3; u02s4; u02s5; u02ml; u02lab;
+//  u03s1; u03s2; u03s3; u03s4; u03lab;
+//  u04s1; u04s2; u04s3; u04s4; u04s5; u04s6; u04ml; u04lab;
+//  u05s1; u05s2; u05s3; u05s4; u05s5; u05s6; u05lab;
+//  u06s1; u06s2; u06s3; u06s4; u06s5; u06lab;
+//  u07s1; u07s2; u07s3; u07s4; u07s5; u07s6; u07lab;
+//  u08s1; u08s2; u08s3; u08s4; u08s5; u08ml; u08lab;
+//  u09s1; u09s2; u09s3; u09s4; u09s5; u09lab;          
+// }
+
+    // ── Learning Outcome nodes ───────────────────────────────────────────
+    node [shape=box width=3.5 style=filled fillcolor="#EEFFEE" fontcolor="Black" fontname="Helvetica" fontsize=10]
+
+
+    lo1 [label="LO1 — Critically analyse\ntraditional game AI"]
+    lo2 [label="LO2 — Evaluate and compare\nAI approaches"]
+    lo3 [label="LO3 — Design and implement\nclassical algorithms"]
+    lo4 [label="LO4 — Conceptual understanding\nof modern ML"]
+    lo5 [label="LO5 — Apply neural network\nsolutions"]
+    lo6 [label="LO6 — Critically assess\nmodern AI in games"]
+
+    { rank = same; lo1; lo2; lo3; lo4; lo5; lo6; level4;}
+
+    edge [style=dashed color="#2d7a4a" constraint=false]
+
+
+    u01 -> lo1
+    u02 -> lo1
+    u03 -> lo1
+    u04 -> lo1
+
+    u01 -> lo2
+    u02 -> lo2
+    u03 -> lo2
+    u04 -> lo2
+    u05 -> lo2
+    u06 -> lo2
+    u07 -> lo2
+    u08 -> lo2
+    u09 -> lo2
+
+    u02 -> lo3
+    u03 -> lo3
+    u04 -> lo3
+
+    u05 -> lo4
+    u06 -> lo4
+    u07 -> lo4
+
+    u06 -> lo5
+    u07 -> lo5
+    u08 -> lo5
+
+    u01 -> lo6
+    u08 -> lo6
+    u09 -> lo6
+
+
+    // ── Legend ───────────────────────────────────────────────────────────────
+    // subgraph cluster_legend {
+    //     label="Legend" fontsize=10 style=dashed color="#aaaaaa"
+    //     node [width=1.5]
+    //     leg1 [label="Classical AI unit" fillcolor="#2d4a7a" fontcolor="white"]
+    //     leg2 [label="ML / Modern unit" fillcolor="#4a2d7a" fontcolor="white"]
+    //     leg3 [label="Lecture segment" fillcolor="#d0e4f7" fontcolor="#1a1a2e"]
+    //     leg4 [label="ML Bridge" fillcolor="#c8d8f0" fontname="Helvetica-Oblique" fontcolor="#1a1a2e"]
+    //     leg5 [label="Lab" fillcolor="#a8c8e8" fontname="Helvetica-Oblique" fontcolor="#1a1a2e"]
+    //     leg6 [label="Learning Outcome" fillcolor="#1a4a2e" fontcolor="white"]
+    //     leg1 -> leg2 -> leg3 -> leg4 -> leg5 -> leg6 [style=invis]
+    // }
+}

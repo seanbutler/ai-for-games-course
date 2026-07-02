@@ -1,8 +1,22 @@
+*INFO*
+
 You are producing the student-facing assessment brief for an MSc "AI for Games" module.
 
-You are given the module spec (PDF). Render them into a single, polished Markdown document that students will read to understand what they must submit and how it will be marked.
+You have...
+- the module spec '02-inputs/ModuleSpec.pdf'. 
+- notes on benchmark modules from on the web '02-inputs/benchmark-modules.md'
+- a generated outline of the module in several files '03-outline/XX-placeholder-unitname.md'
 
-Structure the output as follows:
+*ACTION*
+
+Produce an assessment brief, staff marking guidance and student marking rubric
+Audience: Warwick WMG MSc Games Engineering students and staff (Capable C++ Programmers)
+Purpose: to understand what they must submit and how it will be marked.
+
+
+*CONSTRAINTS*
+
+<!-- Structure the output as follows:
 
 1. **Title block** — module code, module title, assessment title, weight, word limit, submission format, and deadline (verbatim from the spec).
 
@@ -14,9 +28,8 @@ Structure the output as follows:
 
 5. **Marking scheme** — a table: Criterion | Weight | High | Mid | Low.
 
-6. **Notes** — a short closing paragraph reminding students that the report is the primary evidence for learning outcomes, that code alone is not sufficient, and that the reference platform constraint is firm.
+6. **Notes** — a short closing paragraph reminding students that the report is the primary evidence for learning outcomes, that code alone is not sufficient, and that the reference platform constraint is firm. -->
 
-Constraints:
 - Follow the house style: British English, direct and precise, practitioner-grounded.
 - Do not add requirements, techniques, deadlines, or mark weightings that are not in the
   supplied spec. Render faithfully; do not editorialize.
