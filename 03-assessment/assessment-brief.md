@@ -29,12 +29,9 @@ Every submission must include a working implementation of each of the following:
 Your Choice of One of the following:
 
 1. Hierarchical pathfinding (cluster abstraction or equivalent) with measurable improvement in query time or path quality
-1. Behaviour tree with blackboard architecture, reusable subtrees, and  decorator node types
-1. Utility AI scoring system with response curves applied to at least two competing agent objectives
-1. Goal-Oriented Action Planning (GOAP) or STRIPS-style planner producing runtime action sequences for at least one agent
-
-
-<!-- ~2. Navigation mesh generation or integration with dynamic obstacle avoidance~ -->
+2. Behaviour tree with blackboard architecture, reusable subtrees, and  decorator node types
+3. Utility AI scoring system with response curves applied to at least two competing agent objectives
+4. Goal-Oriented Action Planning (GOAP) or STRIPS-style planner producing runtime action sequences for at least one agent
 
 
 ### B. Neural Architecture for Game Intelligence
@@ -42,7 +39,7 @@ Your Choice of One of the following:
 Apply a neural network to a game-relevant predictive or control task, with the emphasis on architectural justification: you must argue why the chosen architecture's inductive bias fits the structure of your specific problem, and compare results against a simpler baseline. The architecture must be one of: convolutional (CNN), recurrent (RNN/LSTM), or transformer/attention. Choose the  approach **1. Supervised** or **2. Reinforcement Learning** that fits your project:
 
 1. *Supervised:* Define a labelled dataset from your game (e.g. classify game states, predict player intent, estimate threat from sensor readings). Train and evaluate on held-out test data. Required evidence: dataset description, training loss curve, test accuracy or equivalent metric, baseline comparison.
-1. *Reinforcement learning:* Train a policy network by interacting with your game environment through a reward signal -- no labelled data required. Required evidence: reward function design rationale, learning curve (cumulative reward over training steps), policy analysis describing what the agent learned and where it fails, baseline comparison.
+2. *Reinforcement learning:* Train a policy network by interacting with your game environment through a reward signal -- no labelled data required. Required evidence: reward function design rationale, learning curve (cumulative reward over training steps), policy analysis describing what the agent learned and where it fails, baseline comparison.
 
 In both cases the report must include an architecture diagram and a written argument for why the chosen architecture is appropriate for the problem.
 
