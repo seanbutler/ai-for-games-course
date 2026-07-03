@@ -28,7 +28,9 @@ Purpose: to understand what they must submit and how it will be marked.
 
 5. **Marking scheme** — a table: Criterion | Weight | High | Mid | Low.
 
-6. **Notes** — a short closing paragraph reminding students that the report is the primary evidence for learning outcomes, that code alone is not sufficient, and that the reference platform constraint is firm. -->
+6. **Notes** — a short closing paragraph reminding students that the report is the primary evidence for learning outcomes, that code alone is not sufficient, and that the reference platform constraint is firm. 
+
+-->
 
 - Follow the house style: British English, direct and precise, practitioner-grounded.
 - Do not add requirements, techniques, deadlines, or mark weightings that are not in the
