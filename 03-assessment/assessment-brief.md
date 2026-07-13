@@ -1,17 +1,20 @@
 # Assessment Brief
 
-**Module code:** WM9SL-15  
-**Module title:** AI and Games  
-**Assessment title:** Game AI Implementation  
-**Weight:** 100%  
-**Length:** 4000 words (report component)  
-**Submission format:** Project -- Individual  
-**Submission deadline:** 31st May 2026  
-**Self-certification eligible:** Yes (extension only)
+|   |   |
+|--:                                |---------                      |
+| **Module code:**                  | WM9SL-15                      | 
+| **Module title:**                 | AI and Games                  | 
+| **Assessment title:**             | Game AI Implementation        | 
+| **Weight:**                       | 100%                          | 
+| **Length:**                       | 4000 words (report component) | 
+| **Submission format:**            | Project - Individual          |   
+| **Submission deadline:**          | 31st May 2026                 | 
+| **Self-certification eligible:**  | Yes (extension only)          | 
+
 
 ## Overview
 
-You will architect and implement artificial intelligence techniques in C++ using the game engineering shell (game loop, renderer, input, basic drawing) provided into a single interactive system within a modern development environment then write a 4000-word technical report documenting your design decisions, implementation, and critical evaluation. 
+You will architect and implement artificial intelligence techniques in C++ (and Python where necessary) using the game engineering shell (game loop, renderer, input, basic drawing) providing a single interactive system within a modern development environment. Then write a 4000-word technical report documenting your design decisions, implementation, and critical evaluation. 
 
 The project is designed to demonstrate both your practical ability to implement game AI systems and your capacity to analyse and justify the approaches you have chosen. Code alone is not sufficient evidence of learning: the report is the primary vehicle through which you demonstrate achievement of the module learning outcomes.
 
@@ -33,13 +36,15 @@ Your Choice of One of the following:
 3. Utility AI scoring system with response curves applied to at least two competing agent objectives
 4. Goal-Oriented Action Planning (GOAP) or STRIPS-style planner producing runtime action sequences for at least one agent
 
+More marks will be awarded for the more technically accomplished implementations from this list.
 
 ### B. Neural Architecture for Game Intelligence
 
-Apply a neural network to a game-relevant predictive or control task, with the emphasis on architectural justification: you must argue why the chosen architecture's inductive bias fits the structure of your specific problem, and compare results against a simpler baseline. The architecture must be one of: convolutional (CNN), recurrent (RNN/LSTM), or transformer/attention. Choose the  approach **1. Supervised** or **2. Reinforcement Learning** that fits your project:
+Apply a neural network to a game-relevant predictive or control task, with the emphasis on architectural justification: you must argue why the chosen architecture's inductive bias fits the structure of your specific problem, and compare results against a simpler baseline. The architecture must be one of: convolutional (CNN), recurrent (RNN/LSTM), or transformer/attention. Choose the  approach **Supervised Learning** or **Reinforcement Learning** that fits your project:
 
-1. *Supervised:* Define a labelled dataset from your game (e.g. classify game states, predict player intent, estimate threat from sensor readings). Train and evaluate on held-out test data. Required evidence: dataset description, training loss curve, test accuracy or equivalent metric, baseline comparison.
-2. *Reinforcement learning:* Train a policy network by interacting with your game environment through a reward signal -- no labelled data required. Required evidence: reward function design rationale, learning curve (cumulative reward over training steps), policy analysis describing what the agent learned and where it fails, baseline comparison.
+1. *Supervised Learning:* Define a labelled dataset from your game (e.g. classify game states, predict player intent, estimate threat from sensor readings). Train and evaluate on held-out test data. Required evidence: dataset description, training loss curve, test accuracy or equivalent metric, baseline comparison.
+
+2. *Reinforcement Learning:* Train a policy network by interacting with your game environment through a reward signal, no labelled data required. Required evidence: reward function design rationale, learning curve (cumulative reward over training steps), policy analysis describing what the agent learned and where it fails, baseline comparison.
 
 In both cases the report must include an architecture diagram and a written argument for why the chosen architecture is appropriate for the problem.
 
@@ -58,30 +63,30 @@ Where necessary you may use Python to manage the training and data access.
 
 During runtime consideration should be given to keep the speed of inference high, you should describe and evaluate the approach you took.
 
-### Deliverable 1 -- Code
+### Deliverable 1: Working System and Code
 
 A working implementation of AI techniques addressing all the requirements (A, B, & C) within a game or interactive environment. The codebase and complete pipeline including any training data and tools must be submitted as a zip archive containing all source files and a README describing how to build and run the project.
 
-### Deliverable 2 -- Report (4000 words)
+### Deliverable 2: Report (4000 words)
 
 The report documents your implementation and provides the critical analysis through which learning outcomes are assessed. Structure it using the following sections.
 
-**Introduction**  
+#### **Introduction**  
 Briefly describe your game or interactive environment and the AI problem(s) you are addressing. State which techniques you have implemented and why you selected them.
 
-**Design and Architecture**  
+#### **Design and Architecture**  
 Explain the overall structure of your AI system. Describe how the components fit together and how your design decisions follow from the constraints and goals of your chosen environment. Reference relevant literature to justify your design choices.
 
-**Implementation**  
+#### **Implementation**  
 Describe the key algorithmic choices you made during implementation. Where you deviated from a textbook approach, explain why. Include pseudocode or short code excerpts where they aid explanation; do not reproduce large blocks of source code.
 
-**Evaluation**  
+#### **Evaluation**  
 Critically evaluate the AI behaviour you implemented. Discuss what works well, what fails under which conditions, and how your chosen approach compares to alternatives. Quantitative results (timing, path quality, decision accuracy) are expected where measurable.
 
-**Reflection**  
+#### **Reflection**  
 Reflect on the relationship between classical and modern AI approaches in your implementation. Where could a machine learning technique replace or augment a classical one? What would be gained and what would be lost?
 
-**References**  
+#### **References**  
 Full bibliography in a consistent citation format (Harvard preferred).
 
 ---
